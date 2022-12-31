@@ -62,9 +62,9 @@ mulai:
         int 21h
         cmp al,'y'
         je proses
-        jne error_nsg
+        jne error_msg
 
-error_nsg:
+error_msg:
     mov ah,09h
     mov dx,offset error
     int 21h
@@ -98,6 +98,8 @@ proses:
     cmp bh,'0'
     cmp bl,'4'
     je hasil4
+    
+    jne error_msg
 
 
 
